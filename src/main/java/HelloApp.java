@@ -1,22 +1,28 @@
 public class HelloApp {
     public static void main(String[] args) {
 
-        StringBuilder names = new StringBuilder();
-
-        // Check if no arguments
+        // Default case
         if (args.length == 0) {
             System.out.println("Hello, World!");
             return;
         }
 
-        // Enhanced for loop
+        StringBuilder result = new StringBuilder();
+
         for (String name : args) {
-            if (names.length() > 0) {
-                names.append(", ");
+
+            // Capitalize first letter using substring
+            String formattedName =
+                    name.substring(0, 1).toUpperCase() +
+                            name.substring(1).toLowerCase();
+
+            if (result.length() > 0) {
+                result.append(", ");
             }
-            names.append(name);
+
+            result.append(formattedName);
         }
 
-        System.out.println("Hello, " + names + "!");
+        System.out.println("Hello, " + result + "!");
     }
 }
