@@ -7,22 +7,9 @@ public class HelloApp {
             return;
         }
 
-        StringBuilder result = new StringBuilder();
+        // Join all arguments with comma
+        String names = String.join(", ", args);
 
-        for (String name : args) {
-
-            // Capitalize first letter using substring
-            String formattedName =
-                    name.substring(0, 1).toUpperCase() +
-                            name.substring(1).toLowerCase();
-
-            if (result.length() > 0) {
-                result.append(", ");
-            }
-
-            result.append(formattedName);
-        }
-
-        System.out.println("Hello, " + result + "!");
+        System.out.println("Hello, " + names + "!");
     }
 }
